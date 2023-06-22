@@ -1,0 +1,17 @@
+This folder contains how to run CNN code
+Traning datasets will be in wav formate dn it will be converted to spectrogram images and in the prediction the data will be in wav formate which will dn be converted to spectrogram and the signal will be predicted   
+
+1. parent_dir = 'gdrive/My Drive/Universal_Dataset'
+def saveSpec(parent_dir,sub_dir,file_ext="*.wav",  :  
+This part of code is used to read the datset in wav formate
+
+2. file_path=(os.path.join('/content/gdrive/My Drive/Universal_Dataset/Universal_Spectrograms/',sub_dir)) : This part of code is used to give the dataset path to convert the entier wav file signals folder to spectrogram images. 
+
+3. /content/gdrive/MyDrive/Universal_Dataset /Universal_Dataset/Universal_Spectrograms': To trace the datasetpath
+
+4. '/content/gdrive/MyDrive/Universal_Dataset /Universal_Dataset/Universal_Spectrograms_CNN/Train/Footsteps')
+train_TYPE_A_dir = os.path.join('/content/gdrive/MyDrive/Universal_Dataset /Universal_Dataset/Universal_Spectrograms_CNN/Train/TYPE_A')
+train_TYPE_B_dir = os.path.join('/content/gdrive/MyDrive/Universal_Dataset /Universal_Dataset/Universal_Spectrograms_CNN/Train/TYPE_B')
+This is used to load the datset which is in spectrogram image for tranning and validation.
+
+4. print("Audio is not recognised"): This code is used to give new signal which is in spectrogram image to predict the type.
