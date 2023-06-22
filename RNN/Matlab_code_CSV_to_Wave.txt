@@ -1,0 +1,18 @@
+clc;
+clear all;
+close all;
+
+data=csvread("aav11event1_1_1.csv");
+time=data(:,1);
+output=data(:,1);
+output = output / max(abs(min(output)),max(output));
+%plot(time,output);
+%Fs=abs(round(length(data)/(time(end)-time(1))));
+Fs=22050;
+%display(Fs)
+save('aec.mat','Fs','data');
+load aec.mat
+filename='aav11event1_1_1.wav';
+audiowrite('aav11event1_1_1.wav',output,Fs)
+clear output Fs
+[output,Fs]=audioread(filename);
