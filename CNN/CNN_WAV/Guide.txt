@@ -1,0 +1,3 @@
+This folder contains the cnn model in which the dataset is taken in wav formate
+The procedure is as in RNN
+Dataset for tranning and testing is taken from the signal folder
