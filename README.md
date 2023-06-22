@@ -18,14 +18,15 @@ This section describes the 2 methods which are being employed for the classifica
 Using Deep learning, the vehicle and footstep sound classification is done without manual feature extraction. CNN is used for the image classification.The input audio signal is represented as a spectrogram. This spectrogram is treated as an input image.The CNN uses this sprectrogram to predict the category of audio. RNN is used for classification with audio as input. Below are the detailed steps followed for the process.
 
 **Data Generation**
-One of the most critical steps is choosing the right data to train our model since the performance and the classification accuracy of the model would largely revolve around the provided data. Therefore, the data would be preprocessed to check for loss of signal data, correctness and calculating precise amount of data to feed the model avoiding overfitting. The initial raw data are sound excerpts in digital files in .mp3 format spread over three different categories; metal, grass, and concrete surfaces. These audio files in .mp3 are collectively stored in a folder, called a dataset, will be used for further processing. The dataset is divided into training and validations for classification purposes. The noisy dataset is also generated from the original audio signals by adding AWGN noise with 0.05.
+One of the most critical steps is choosing the right data to train our model since the performance and the classification accuracy of the model would largely revolve around the provided data. Therefore, the data would be preprocessed to check for loss of signal data, correctness and calculating precise amount of data to feed the model avoiding overfitting. The initial raw data are sound excerpts in digital files in .mp3 format spread over three different categories; metal, grass, and concrete surfaces. These audio files in .mp3 are collectively stored in a folder, called a dataset, will be used for further processing. The dataset is divided into training and validations for classification purposes. The noisy dataset is also generated from the original audio signals by adding AWGN noise with 0.05.  <br />
 
 **Denoising**
 The input audio signal if it noisy, then the denoising is done using Discrete Wavelet Transform method.In this denosing method, the different parameters set are -
 *	Mode of denoising - Soft
 *	Wavelet - sym8
 *	Wavelet levels - 3
-*	Method for wavelet coefficient threshold selection - Visushrink
+*	Method for wavelet coefficient threshold selection - Visushrink  <br />
+  
  **Spectrogram Generation**
 Spectrograms are used for the 2D representation of the signal. Spectrograms have time on the x-axis and frequency on the y-axis.To quantify the magnitude of frequency  in a time slot, a colormap is used.In this method of classification, each audio signal is converted to mel-spectrogram. The parameters used to generate spectrograms using stft are given below:
 *	Sampling rate - 22050
@@ -33,10 +34,10 @@ Spectrograms are used for the 2D representation of the signal. Spectrograms have
 *	Window function - Hanning window
 *	Frequency scale - MEL
 *	Number of MEL bins - 96
-*	Highest frequency(fmax) = 11025(sr/2)
+*	Highest frequency(fmax) = 11025(sr/2) <br />
 
  **MFCC Generation**
-One popular audio feature extraction method is the Mel-frequency cepstral coefficients (MFCC) which have  39 features.  The feature count is small enough to force us to learn the information of the audio.  12 parameters are related to the amplitude of frequencies. It provides us enough frequency channels to analyze the audio. .mfcc is used to calculate mfccs of a signal.  By printing the shape of mfccs you  get how many mfccs are calculated on how many frames. The first value represents the number of  mfccs  calculated  and  another value represents a number of frames available.  
+One popular audio feature extraction method is the Mel-frequency cepstral coefficients (MFCC) which have  39 features.  The feature count is small enough to force us to learn the information of the audio.  12 parameters are related to the amplitude of frequencies. It provides us enough frequency channels to analyze the audio. .mfcc is used to calculate mfccs of a signal.  By printing the shape of mfccs you  get how many mfccs are calculated on how many frames. The first value represents the number of  mfccs  calculated  and  another value represents a number of frames available.   <br />
 
 ## CNN architecture
 The CNN model is implemented using TensorFlow 2.0 and Keras as API. TensorFlow
